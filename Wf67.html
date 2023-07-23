@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modificador de Mensajes</title>
+</head>
+<body>
+    <h1>Modificador de Mensajes</h1>
+    <form>
+        <label for="message">Mensaje:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="button" onclick="modifyMessage()">Cambiar</button>
+    </form>
+
+    <p>Resultado:</p>
+    <p id="result"></p>
+
+    <script>
+        function modifyMessage() {
+            const messageInput = document.getElementById("message");
+            const resultPara = document.getElementById("result");
+
+            const message = messageInput.value;
+            const modifiedMessage = modifyText(message);
+
+            resultPara.textContent = modifiedMessage;
+        }
+
+        function modifyText(message) {
+            // Aquí se realiza la modificación del texto para evitar el anti spam
+            // Puedes utilizar las técnicas que hemos empleado anteriormente para cambiar el mensaje
+
+            // Ejemplo: Cambiar todas las letras 'a' por 'x'
+            const modifiedMessage = message.replace(/a/gi, 'x');
+
+            return modifiedMessage;
+        }
+    </script>
+</body>
+</html>
